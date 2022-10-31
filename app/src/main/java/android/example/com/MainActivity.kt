@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity() {
             binding.boxThreeText,
             binding.boxFourText,
             binding.boxFiveText,
-            binding.constraintLayout
+            binding.constraintLayout,
+            binding.redButton,
+            binding.yellowButton,
+            binding.greenButton
             // binding.redButton, binding.yellowButton,
         )
 
@@ -39,14 +42,18 @@ class MainActivity : AppCompatActivity() {
     private fun makeColored(view: View) {
         when (view.id) {
 
-            // Boxes using Color class colors for background
+            // Boxes using Color-class colors for a background
             R.id.box_one_text -> view.setBackgroundColor(Color.DKGRAY)
             R.id.box_two_text -> view.setBackgroundColor(Color.GRAY)
 
-            // Boxes using Android color resources for background
+            // Boxes using Android color resources for a background
             R.id.box_three_text -> view.setBackgroundResource(android.R.color.holo_green_light)
             R.id.box_four_text -> view.setBackgroundResource(android.R.color.holo_green_dark)
             R.id.box_five_text -> view.setBackgroundResource(android.R.color.holo_green_light)
+
+            R.id.red_button -> binding.boxThreeText.setBackgroundResource(R.color.my_red)
+            R.id.yellow_button -> binding.boxFourText.setBackgroundResource(R.color.my_yellow)
+            R.id.green_button -> binding.boxFiveText.setBackgroundResource(R.color.my_green)
 
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
